@@ -29,12 +29,19 @@ img {
 
     visibility: hidden;
     height: 0;
+    max-height: 0;
     position: absolute;
+
+    transition: max-height 0.3s ease;
 }
+
+
+
 
 .nav--visible {
     visibility: visible;
     height: auto;
+    /* max-height: 220px; */
     position: relative;
 }
 
@@ -97,6 +104,16 @@ header {
     list-style: none;
     padding: 0;
     text-transform: uppercase;
+
+    opacity: 0;
+    /* Initially hide the list items */
+    transition: opacity 0.3s ease;
+    /* Transition effect for smooth appearance */
+}
+
+.nav--visible .nav__list {
+    opacity: 1;
+    /* Show the list items when nav is visible */
 }
 
 .nav__list--primary {
@@ -123,6 +140,19 @@ header {
 .nav__link--button:active {
     opacity: 0.8;
 }
+
+.nav__item,
+.btn {
+    transition: transform 0.3s ease;
+    /* Transition property for smoother effect */
+}
+
+.nav__item:hover,
+.btn:hover {
+    transform: scale(1.1);
+    /* Scale up the element on hover */
+}
+
 
 /* hero */
 
@@ -264,6 +294,7 @@ footer ul {
         visibility: hidden;
     }
 
+
     .row {
         display: flex;
         gap: 2em;
@@ -279,16 +310,18 @@ footer ul {
     .nav {
         display: flex;
         width: 100%;
+        visibility: visible;
         align-items: center;
         gap: 1em;
         justify-content: end;
     }
 
+
     .nav__list {
         display: flex;
         gap: 1em;
         margin: 0;
-
+        opacity: 1;
     }
 
     .nav__item {
@@ -298,8 +331,6 @@ footer ul {
     .main {
         flex-direction: column;
     }
-
-    .main--primary {}
 
     .sidebar {
         gap: 1em;
