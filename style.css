@@ -238,10 +238,26 @@ footer ul {
     font-weight: 200;
 }
 
+.footer--links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.footer__item {
+    margin-top: 0;
+}
+
 @media screen and (min-width: 700px) {
     .row {
         display: flex;
         gap: 2em;
+    }
+
+    header .row {
+        flex-direction: column;
+        gap: 0.5em;
     }
 
     .main {
@@ -265,8 +281,15 @@ footer ul {
     }
 
     .footer--about {
-        width: 50%;
+        width: 60%;
     }
+
+    .footer--links {
+        flex-direction: column;
+        justify-content: end;
+    }
+
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -276,5 +299,21 @@ footer ul {
 
     .sidebar {
         flex-direction: column;
+    }
+
+    .footer--about {
+        width: 35%;
+    }
+
+    .footer--links {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: 65%;
+        display: flex;
+        gap: 1em;
+    }
+
+    .footer__li {
+        margin-top: 1.25em;
     }
 }
